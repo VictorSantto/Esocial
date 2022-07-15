@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /lib/
+Disallow: /res/
+Disallow: /src/
+Sitemap: https://wtag.com.br/esocial/sitemap.xml

@@ -1,0 +1,141 @@
+<!-- Update View -->
+	
+	<!-- Content -->
+
+	<div id="gz-content" class="dv-f-r">
+	
+		<p class="dv-mt-mdpi dv-mr-xdpi dv-mb-mdpi dv-ml-xdpi gz-gray">
+		
+			<one(titles)>
+			
+				<gz>menus.menu</gz> >
+
+				<gz>telas.tela</gz> > 
+				
+				<span class="gz-black gz-bold">
+				
+					Alteração
+					
+				</span>
+				
+			</one>	
+				
+		</p>
+		
+		<one(usuarios)>
+
+			<!-- Form -->
+				
+			<form id="gz-form" class="dv-f-l dv-ml-xdpi dv-pt-ldpi">
+			
+				<!-- User -->
+				
+				<div class="gz-block dv-f-l">
+		
+					<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Usuário</div>
+					
+				</div>
+
+				<div class="gz-block dv-f-l">
+					
+					<input class="gz-textbox-mdpi dv-f-l dv-mt-ldpi gz-required" type="text" 
+							name="usuarios.usuario" value="<gz>usuarios.usuario</gz>">
+
+				</div>
+				
+				<!--
+		
+				<div class="gz-block dv-f-l">
+		
+					<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Tema</div> 
+					
+				</div>
+				
+				<div class="gz-block dv-f-l">
+
+					<select id="usuarios.temas" class="gz-select-mdpi dv-f-l dv-mt-ldpi gz-required"
+							onclick="showScreen(this.id, '');" 
+							onkeydown="showScreenEvent(this.id, '', event);">
+					
+						<option value="<gz>usuarios.tema</gz>" selected>
+			
+							<gz>temas.tema</gz>
+		
+						</option>	
+					
+					</select>
+				
+				</div> -->
+				
+				<!-- Password -->
+				
+				<div class="gz-block dv-f-l">
+		
+					<div class="gz-label-ldpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Senha atual</div>
+					
+				</div>
+
+				<div class="gz-block dv-f-l">
+					
+					<input class="gz-textbox-ldpi dv-f-l dv-mt-ldpi gz-required" type="password" 
+							name="usuarios.current_password" value="">
+				
+				</div>	
+				
+				<!-- Password -->
+				
+				<div class="gz-block dv-f-l">
+				
+					<div class="gz-label-ldpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Nova senha</div>
+					
+				</div>
+
+				<div class="gz-block dv-f-l">
+
+					<input class="gz-textbox-ldpi dv-f-l dv-mt-ldpi gz-required" type="password" 
+							name="usuarios.new_password" value="">
+				
+				</div>	
+
+				<!-- Action -->
+
+				<div class="gz-button dv-f-l dv-mt-mdpi dv-mr-hdpi dv-mb-xdpi">
+
+					<a id="usuarios.create" href="#" class="gz-tooltip"
+							onclick="request('minha_conta', 'update'); return false;">
+
+						<img src="@_ROOT/mod/cms/img/icon/ok.png" />
+
+						<span class="gz-span-top-right @_THEME">
+
+							@_LAN_CONFIRM
+
+						</span>
+
+					</a>		
+
+				</div>
+				
+				<!-- Cancel -->
+				
+				<div class="gz-button dv-f-l dv-mt-mdpi dv-mb-xdpi">
+
+					<a href="#" class="gz-tooltip" onclick="goToTable(gz_home); return false;">
+
+						<img src="@_ROOT/mod/cms/img/icon/cancel.png"/>
+						
+						<span class="gz-span-top-right @_THEME">
+
+							@_LAN_CANCEL
+
+						</span>
+
+					</a>
+
+				</div>
+					
+			</form>
+		
+		</one>
+
+	</div>

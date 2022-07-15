@@ -1,0 +1,123 @@
+<!-- Create View -->
+	
+	<!-- Content -->
+
+	<div id="gz-content" class="dv-f-r">
+	
+		<p class="dv-mt-mdpi dv-mr-xdpi dv-mb-mdpi dv-ml-xdpi gz-gray">
+		
+			<one(titles)>
+			
+				<gz>menus.menu</gz> /
+
+				<gz>telas.tela</gz> / 
+				
+				<span class="gz-black gz-bold">
+				
+					@_LAN_CREATE
+					
+				</span>
+				
+			</one>	
+				
+		</p>
+	
+		<!-- Form -->
+
+		<form id="gz-form" class="dv-f-l dv-ml-xdpi dv-pt-ldpi">
+						
+			<!-- Tela -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Tela</div>
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+							
+				<input class="gz-textbox-mdpi dv-f-l dv-mt-ldpi" type="text" 
+						id="telas.tela" name="telas.tela" value="">
+				
+			</div>
+						
+			<!-- Identificador -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Identificador</div>
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+							
+				<input class="gz-textbox-mdpi dv-f-l dv-mt-ldpi" type="text" 
+						id="telas.identificador" name="telas.identificador" value="">
+				
+			</div>
+					
+			<!-- Menu -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Menu</div> 
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+			
+				<select id="telas.menus" class="gz-select-mdpi dv-f-l dv-mt-ldpi gz-required">
+					
+					<for(menus)>
+
+						<option value="<gz>menus.id</gz>">
+						
+							<gz>menus.menu</gz>
+						
+						</option>
+
+					</for>
+					
+				</select>
+
+			</div>
+
+			<!-- Ok -->
+
+			<div class="gz-button dv-f-l dv-mt-mdpi dv-mr-hdpi dv-mb-xdpi">
+
+				<a href="#" onclick="request('telas', 'create'); return false;" class="gz-tooltip">
+
+					<img src="@_ROOT/mod/cms/img/icon/ok.png" />
+
+					<span class="gz-span-top-right @_THEME">
+
+						@_LAN_CONFIRM
+
+					</span>
+
+				</a>
+
+			</div>
+			
+			<!-- Cancel -->
+			
+			<div class="gz-button dv-f-l dv-mt-mdpi dv-mb-xdpi">
+
+				<a href="#" onclick="cancel(); return false;" class="gz-tooltip">
+
+					<img src="@_ROOT/mod/cms/img/icon/cancel.png" />
+
+					<span class="gz-span-top-right @_THEME">
+
+						@_LAN_CANCEL
+
+					</span>
+
+				</a>
+
+			</div>
+				
+		</form>
+	
+	</div>

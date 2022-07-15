@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Settings -->
+<settings>
+	<!-- Module -->
+	<module>page</module>
+	<package>mod/page</package>
+	<home_page>login</home_page>
+	
+	<!-- Specialties -->
+	<daoFactory>
+		<itens_per_page>9</itens_per_page>
+	</daoFactory>
+</settings>

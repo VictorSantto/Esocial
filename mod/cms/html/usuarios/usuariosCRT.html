@@ -1,0 +1,290 @@
+<!-- Create View -->
+	
+	<!-- Content -->
+
+	<div id="gz-content" class="dv-f-r">
+	
+		<p class="dv-mt-mdpi dv-mr-xdpi dv-mb-mdpi dv-ml-xdpi gz-gray">
+		
+			<one(titles)>
+			
+				<gz>menus.menu</gz> /
+
+				<gz>telas.tela</gz> / 
+				
+				<span class="gz-black gz-bold">
+				
+					@_LAN_CREATE
+					
+				</span>
+				
+			</one>	
+				
+		</p>
+	
+		<!-- Form -->
+
+		<form id="gz-form" class="dv-f-l dv-ml-xdpi dv-pt-ldpi">
+						
+			<!-- Usuario -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Usuario</div>
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+							
+				<input class="gz-textbox-mdpi dv-f-l dv-mt-ldpi" type="text" 
+						id="usuarios.usuario" name="usuarios.usuario" value="">
+				
+			</div>
+						
+			<!-- Cpf -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-ldpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Cpf</div>
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+							
+				<input class="gz-textbox-ldpi dv-f-l dv-mt-ldpi gz-cpf" type="text" 
+						id="usuarios.cpf" name="usuarios.cpf" value="">
+				
+			</div>
+						
+			<!-- Email -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-ldpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Email</div>
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+							
+				<input class="gz-textbox-mdpi dv-f-l dv-mt-ldpi gz-email" type="text" 
+						id="usuarios.email" name="usuarios.email" value="">
+				
+			</div>
+						
+			<!-- Senha -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Senha</div>
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+							
+				<input class="gz-textbox-mdpi dv-f-l dv-mt-ldpi" type="text" 
+						id="usuarios.senha" name="usuarios.senha" value="">
+				
+			</div>
+							
+			<!-- Foto -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Foto</div>
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+							
+				<input type="file" id="upload" name="upload" class="gz-textbox-mdpi dv-f-l dv-mt-ldpi"
+						onchange="imagePreview();">
+				
+			</div>
+			
+			<div class="gz-block dv-f-l">
+							
+				<img id="preview" width="270" src="..." class="dv-pb-mdpi" />
+						
+			</div>
+						
+			<!-- Access_token -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Access_token</div>
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+							
+				<input class="gz-textbox-mdpi dv-f-l dv-mt-ldpi" type="text" 
+						id="usuarios.access_token" name="usuarios.access_token" value="">
+				
+			</div>
+						
+			<!-- Access_token_expiration -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-ldpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Access_token_expiration</div>
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+							
+				<input class="gz-textbox-ldpi dv-f-l dv-mt-ldpi gz-datetime" type="text" 
+						id="usuarios.access_token_expiration" name="usuarios.access_token_expiration" value="">
+				
+			</div>
+						
+			<!-- Password_token -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Password_token</div>
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+							
+				<input class="gz-textbox-mdpi dv-f-l dv-mt-ldpi" type="text" 
+						id="usuarios.password_token" name="usuarios.password_token" value="">
+				
+			</div>
+						
+			<!-- Password_token_expiration -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-ldpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Password_token_expiration</div>
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+							
+				<input class="gz-textbox-ldpi dv-f-l dv-mt-ldpi gz-datetime" type="text" 
+						id="usuarios.password_token_expiration" name="usuarios.password_token_expiration" value="">
+				
+			</div>
+						
+			<!-- Activation_token -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Activation_token</div>
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+							
+				<input class="gz-textbox-mdpi dv-f-l dv-mt-ldpi" type="text" 
+						id="usuarios.activation_token" name="usuarios.activation_token" value="">
+				
+			</div>
+						
+			<!-- Activation_token_expiration -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-ldpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Activation_token_expiration</div>
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+							
+				<input class="gz-textbox-ldpi dv-f-l dv-mt-ldpi gz-datetime" type="text" 
+						id="usuarios.activation_token_expiration" name="usuarios.activation_token_expiration" value="">
+				
+			</div>
+					
+			<!-- Situacao_registro -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Situacao_registro</div> 
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+			
+				<select id="usuarios.situacoes_registros" class="gz-select-mdpi dv-f-l dv-mt-ldpi gz-required">
+					
+					<for(situacoes_registros)>
+
+						<option value="<gz>situacoes_registros.id</gz>">
+						
+							<gz>situacoes_registros.situacao_registro</gz>
+						
+						</option>
+
+					</for>
+					
+				</select>
+
+			</div>
+					
+			<!-- Perfil -->
+			
+			<div class="gz-block dv-f-l">
+		
+				<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Perfil</div> 
+			
+			</div>
+			
+			<div class="gz-block dv-f-l">
+			
+				<select id="usuarios.perfis" class="gz-select-mdpi dv-f-l dv-mt-ldpi gz-required">
+					
+					<for(perfis)>
+
+						<option value="<gz>perfis.id</gz>">
+						
+							<gz>perfis.perfil</gz>
+						
+						</option>
+
+					</for>
+					
+				</select>
+
+			</div>
+
+			<!-- Ok -->
+
+			<div class="gz-button dv-f-l dv-mt-mdpi dv-mr-hdpi dv-mb-xdpi">
+
+				<a href="#" onclick="request('usuarios', 'create'); return false;" class="gz-tooltip">
+
+					<img src="@_ROOT/mod/cms/img/icon/ok.png" />
+
+					<span class="gz-span-top-right @_THEME">
+
+						@_LAN_CONFIRM
+
+					</span>
+
+				</a>
+
+			</div>
+			
+			<!-- Cancel -->
+			
+			<div class="gz-button dv-f-l dv-mt-mdpi dv-mb-xdpi">
+
+				<a href="#" onclick="cancel(); return false;" class="gz-tooltip">
+
+					<img src="@_ROOT/mod/cms/img/icon/cancel.png" />
+
+					<span class="gz-span-top-right @_THEME">
+
+						@_LAN_CANCEL
+
+					</span>
+
+				</a>
+
+			</div>
+				
+		</form>
+	
+	</div>

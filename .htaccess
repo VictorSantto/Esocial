@@ -1,0 +1,121 @@
+Options -Indexes
+
+<FilesMatch "\.(xml|ini)$">
+	Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(jpg|jpeg|png|gif|ico|css|js)$">
+	Header set Cache-Control "max-age=14400, public"
+</FilesMatch>
+
+<FilesMatch "\.php$">
+	Header set Cache-Control "max-age=0, private, no-store, no-cache, must-revalidate"
+	Header set Pragma "no-cache"
+</FilesMatch>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE application/x-font
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/x-font-otf
+  AddOutputFilterByType DEFLATE application/x-font-truetype
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/x-icon
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+</IfModule>
+
+RewriteEngine On
+RewriteBase /esocial/
+
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+#Header always set Content-Security-Policy "upgrade-insecure-requests;"
+
+# File urls
+RewriteRule ^file/([^/]*)/([0-9]*)/?$ mod/file/Getz.php?method=file&code=$2&screen=$1 [NC,L]
+
+# API urls
+RewriteRule ^api/([^/]*)/([^/]*)/?$ mod/api/Getz.php?method=api-$2&screen=$1 [NC,L]
+
+# WS urls
+RewriteRule ^ws/([^/]*)/sys-create/?$ mod/ws/Getz.php?method=create&code=&search=&position=1&screen=$1&base=&order= [NC,L]
+RewriteRule ^ws/([^/]*)/sys-screen/([^/]*)/([0-9]*)/?$ mod/ws/Getz.php?method=screen&code=&search=$2&position=$3&screen=$1&base=&order= [NC,L]
+RewriteRule ^ws/([^/]*)/sys-screen/([0-9]*)/?$ mod/ws/Getz.php?method=screen&code=&search=&position=$2&screen=$1&base=&order= [NC,L]
+RewriteRule ^ws/([^/]*)/sys-screenHandler/([^/]*)/?$ mod/ws/Getz.php?method=screenHandler&code=&search=$2&position=1&screen=$1&base=&order= [NC,L]
+RewriteRule ^ws/([^/]*)/sys-update/([0-9]*)/?$ mod/ws/Getz.php?method=update&code=$2&search=&position=1&screen=$1&base=&order= [NC,L]
+RewriteRule ^ws/([^/]*)/sys-delete/([^/]*)/?$ mod/ws/Getz.php?method=delete&code=$2&search=&position=1&screen=$1&base=&order= [NC,L]
+
+RewriteRule ^ws/([^/]*)/create/?$ mod/ws/Getz.php?method=ws-create&code=&search=&position=1&screen=$1&base=&order= [NC,L]
+RewriteRule ^ws/([^/]*)/read/([0-9]*)/([0-9]*)/?$ mod/ws/Getz.php?method=ws-read&code=$2&search=&position=$3&screen=$1&base=&order= [NC,L]
+RewriteRule ^ws/([^/]*)/read/([^/]*)/([0-9]*)/?$ mod/ws/Getz.php?method=ws-read&code=&search=$2&position=$3&screen=$1&base=&order= [NC,L]
+RewriteRule ^ws/([^/]*)/read/([0-9]*)/?$ mod/ws/Getz.php?method=ws-read&code=&search=&position=$2&screen=$1&base=&order= [NC,L]
+RewriteRule ^ws/([^/]*)/update/([0-9]*)/?$ mod/ws/Getz.php?method=ws-update&code=$2&search=&position=1&screen=$1&base=&order= [NC,L]
+RewriteRule ^ws/([^/]*)/delete/([^/]*)/?$ mod/ws/Getz.php?method=ws-delete&code=$2&search=&position=1&screen=$1&base=&order= [NC,L]
+RewriteRule ^ws/([^/]*)/([^/]*)/([^/]*)?$ mod/ws/Getz.php?method=$2&code=&search=&position=1&screen=$1&base=&order=&parameters=$3 [NC,L]
+RewriteRule ^ws/([^/]*)/([^/]*)/?$ mod/ws/Getz.php?method=$2&code=&search=&position=1&screen=$1&base=&order= [NC,L]
+
+# CMS urls
+RewriteRule ^cms/([^/]*)/all/?$ mod/cms/Getz.php?method=stateReadAll&code=&search=&position=1&screen=$1&base=&order= [NC,L]
+
+RewriteRule ^cms/([^/]*)/create/([^/]*)/([0-9]*)/([^/]*)/?$ mod/cms/Getz.php?method=stateCreate&code=&search=$2&position=$3&screen=$1&base=&order=$4 [NC,L]
+RewriteRule ^cms/([^/]*)/create/([^/]*)/([0-9]*)/?$ mod/cms/Getz.php?method=stateCreate&code=&search=$2&position=$3&screen=$1&base=&order= [NC,L]
+RewriteRule ^cms/([^/]*)/create/([0-9]*)/([^/]*)?$ mod/cms/Getz.php?method=stateCreate&code=&search=&position=$2&screen=$1&base=&order=$3 [NC,L]
+RewriteRule ^cms/([^/]*)/create/([0-9]*)/?$ mod/cms/Getz.php?method=stateCreate&code=&search=&position=$2&screen=$1&base=&order= [NC,L]
+RewriteRule ^cms/([^/]*)/create/?$ mod/cms/Getz.php?method=stateCreate&code=&search=&position=1&screen=$1&base=&order= [NC,L]
+
+RewriteRule ^cms/([^/]*)/([0-9]*)/([^/]*)/?$ mod/cms/Getz.php?method=stateRead&code=&search=&position=$2&screen=$1&base=&order=$3 [NC,L]
+RewriteRule ^cms/([^/]*)/([0-9]*)/?$ mod/cms/Getz.php?method=stateRead&code=&search=&position=$2&screen=$1&base=&order= [NC,L]
+
+RewriteRule ^cms/([^/]*)/update/([0-9]*)/([^/]*)/([0-9]*)/([^/]*)/?$ mod/cms/Getz.php?method=stateUpdate&code=$2&search=$3&position=$4&screen=$1&base=&order=$5 [NC,L]
+RewriteRule ^cms/([^/]*)/update/([0-9]*)/([^/]*)/([0-9]*)/?$ mod/cms/Getz.php?method=stateUpdate&code=$2&search=$3&position=$4&screen=$1&base=&order= [NC,L]
+RewriteRule ^cms/([^/]*)/update/([0-9]*)/([0-9]*)/historyBack/(\-?[0-9]*)/?$ mod/cms/Getz.php?method=stateUpdate&code=$2&search=&position=$3&screen=$1&base=&order=&historyBack=$4 [NC,L]
+RewriteRule ^cms/([^/]*)/update/([0-9]*)/([0-9]*)/([^/]*)/?$ mod/cms/Getz.php?method=stateUpdate&code=$2&search=&position=$3&screen=$1&base=&order=$4 [NC,L]
+RewriteRule ^cms/([^/]*)/update/([0-9]*)/([0-9]*)/?$ mod/cms/Getz.php?method=stateUpdate&code=$2&search=&position=$3&screen=$1&base=&order= [NC,L]
+
+RewriteRule ^cms/([^/]*)/search/([^/]*)/([0-9]*)/([^/]*)/?$ mod/cms/Getz.php?method=stateRead&code=&search=$2&position=$3&screen=$1&base=&order=$4 [NC,L]
+RewriteRule ^cms/([^/]*)/search/([^/]*)/([0-9]*)/?$ mod/cms/Getz.php?method=stateRead&code=&search=$2&position=$3&screen=$1&base=&order= [NC,L]
+
+RewriteRule ^cms/([^/]*)/called/([0-9]*)/all/historyBack/(\-?[0-9]*)/?$ mod/cms/Getz.php?method=stateCalledAll&code=&search=&position=1&screen=$1&base=$2&order=&historyBack=$3 [NC,L]
+
+RewriteRule ^cms/([^/]*)/called/([0-9]*)/create/([^/]*)/([0-9]*)/([^/]*)/historyBack/(\-?[0-9]*)/?$ mod/cms/Getz.php?method=stateCreate&code=&search=$3&position=$4&screen=$1&base=$2&order=$5&historyBack=$6 [NC,L]
+RewriteRule ^cms/([^/]*)/called/([0-9]*)/create/([^/]*)/([0-9]*)/historyBack/(\-?[0-9]*)/?$ mod/cms/Getz.php?method=stateCreate&code=&search=$3&position=$4&screen=$1&base=$2&order=&historyBack=$5 [NC,L]
+RewriteRule ^cms/([^/]*)/called/([0-9]*)/create/([0-9]*)/([^/]*)/historyBack/(\-?[0-9]*)/?$ mod/cms/Getz.php?method=stateCreate&code=&search=&position=$3&screen=$1&base=$2&order=$4&historyBack=$5 [NC,L]
+RewriteRule ^cms/([^/]*)/called/([0-9]*)/create/([0-9]*)/historyBack/(\-?[0-9]*)/?$ mod/cms/Getz.php?method=stateCreate&code=&search=&position=$3&screen=$1&base=$2&order=&historyBack=$4 [NC,L]
+
+RewriteRule ^cms/([^/]*)/called/([0-9]*)/([0-9]*)/([^/]*)/historyBack/(\-?[0-9]*)/?$ mod/cms/Getz.php?method=stateCalled&code=&search=&position=$3&screen=$1&base=$2&order=$4&historyBack=$5 [NC,L]
+RewriteRule ^cms/([^/]*)/called/([0-9]*)/([0-9]*)/historyBack/(\-?[0-9]*)/?$ mod/cms/Getz.php?method=stateCalled&code=&search=&position=$3&screen=$1&base=$2&order=&historyBack=$4 [NC,L]
+
+RewriteRule ^cms/([^/]*)/called/([0-9]*)/update/([0-9]*)/([^/]*)/([0-9]*)/([^/]*)/historyBack/(\-?[0-9]*)/?$ mod/cms/Getz.php?method=stateUpdate&code=$3&search=$4&position=$5&screen=$1&base=$2&order=$6&historyBack=$7 [NC,L]
+RewriteRule ^cms/([^/]*)/called/([0-9]*)/update/([0-9]*)/([^/]*)/([0-9]*)/historyBack/(\-?[0-9]*)/?$ mod/cms/Getz.php?method=stateUpdate&code=$3&search=$4&position=$5&screen=$1&base=$2&order=&historyBack=$6 [NC,L]
+RewriteRule ^cms/([^/]*)/called/([0-9]*)/update/([0-9]*)/([0-9]*)/([^/]*)/historyBack/(\-?[0-9]*)/?$ mod/cms/Getz.php?method=stateUpdate&code=$3&search=&position=$4&screen=$1&base=$2&order=$5&historyBack=$6 [NC,L]
+RewriteRule ^cms/([^/]*)/called/([0-9]*)/update/([0-9]*)/([0-9]*)/historyBack/(\-?[0-9]*)/?$ mod/cms/Getz.php?method=stateUpdate&code=$3&search=&position=$4&screen=$1&base=$2&order=&historyBack=$5 [NC,L]
+
+RewriteRule ^cms/([^/]*)/called/([0-9]*)/search/([^/]*)/([0-9]*)/([^/]*)/historyBack/(\-?[0-9]*)/?$ mod/cms/Getz.php?method=stateCalled&code=&search=$3&position=$4&screen=$1&base=$2&order=$5&historyBack=$6 [NC,L]
+RewriteRule ^cms/([^/]*)/called/([0-9]*)/search/([^/]*)/([0-9]*)/historyBack/(\-?[0-9]*)/?$ mod/cms/Getz.php?method=stateCalled&code=&search=$3&position=$4&screen=$1&base=$2&order=&historyBack=$5 [NC,L]
+
+RewriteRule ^cms/?$ mod/cms/Getz.php?method=stateRead&code=&search=&position=1&screen=dashboard&base=&order=&historyBack= [NC,L]
+
+# Page urls
+RewriteRule ^([^/]*)/search/([^/]*)/([0-9]*)/?$ mod/page/Getz.php?screen=$1&method=page&position=$3&code=&search=$2 [NC,L]
+RewriteRule ^([^/]*)/search/([^/]*)/?$ mod/page/Getz.php?screen=$1&method=page&position=1&code=&search=$2 [NC,L]
+RewriteRule ^([^/]*)/([0-9]*)/([0-9]*)/?$ mod/page/Getz.php?screen=$1&method=page&position=$3&code=$2&search= [NC,L]
+RewriteRule ^([^/]*)/([^/]*)/([0-9]*)/?$ mod/page/Getz.php?screen=$1&method=page&position=$3&code=&search=&friendly=$2 [NC,L,B,PT]
+RewriteRule ^dev/boot/?$ _dev/bin/Boot.php [NC,L]
+RewriteRule ^dev/build/?$ _dev/bin/Build.php [NC,L]
+RewriteRule ^([^/]*)/([0-9]*)/?$ mod/page/Getz.php?screen=$1&method=page&position=$2&code=&search= [NC,L]
+RewriteRule ^([^/]*)/([^/]*)/?$ mod/page/Getz.php?screen=$1&method=page&position=1&code=&search=&friendly=$2 [NC,L,B,PT]
+RewriteRule ^/?$ mod/page/Getz.php?screen=home&method=page&position=1&code=&search= [NC,L]
+RewriteRule ^([^/]*)/?$ mod/page/Getz.php?screen=$1&method=page&position=1&code=&search= [NC,L]

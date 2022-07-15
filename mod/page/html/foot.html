@@ -1,0 +1,192 @@
+
+		<div id="dv-menu" class="dv-position-fixed-mobile dv-top dv-left dv-full-width dv-full-height-mobile dv-white-bg" style="display: none;">
+		
+			<div class="dv-padding-xdpi dv-text-align-right">
+				
+				<img onclick="showMenu();" class="dv-cursor" src="@_ROOT/res/img/icon/close.svg" width="24">	
+
+			</div>
+		
+			<div class="dv-line">
+
+				<div class="dv-column dv-horizontal-align-center">
+				
+					<div class="dv-padding-hdpi">
+					
+						<ul class="dv-margin-bottom-hdpi">
+						
+							<li><a class="dv-underline dv-cursor" href="@_ROOT/@_YOUR_MENU"><img class="dv-margin-right-mdpi dv-vertical-align-middle" src="@_ROOT/res/img/icon/star.svg" width="16">@_YOUR_MENU</a></li>					
+						
+						</ul>	
+						
+						<ul class="dv-margin-bottom-hdpi">
+						
+							<li><a class="dv-underline dv-cursor" href="@_ROOT/trocar_a_minha_senha">Trocar a minha senha</a></li>
+
+						</ul>							
+
+						<ul>
+
+							<li><a class="dv-underline dv-cursor" href="@_ROOT/termos_de_uso">Termos de uso</a></li>
+							
+							<li><a class="dv-underline dv-cursor" href="@_ROOT/politica_de_privacidade">Política de privacidade</a></li>
+							
+							<li class="dv-display-inline dv-underline dv-cursor" onclick="efetuarOLogout();">Efetuar o logout</li>
+	
+						</ul>
+						
+					</div>
+
+				</div>
+				
+			</div>		
+
+		</div>
+
+		<div id="dv-search" class="dv-position-fixed-mobile dv-top dv-left dv-full-width dv-full-height-mobile dv-white-bg" style="display: none;">
+		
+			<div class="dv-padding-xdpi dv-text-align-right">
+				
+				<img onclick="showSearch();" class="dv-cursor" src="@_ROOT/res/img/icon/close.svg" width="24">	
+
+			</div>
+		
+			<div class="dv-line-mobile dv-padding-xdpi">
+
+				<div class="dv-column dv-vertical-align-center">
+
+					<form onsubmit="searchExample(); return false;">
+
+						<input class="dv-padding-mdpi dv-radius dv-bold" type="text" id="search" name="search" autocomplete="off" placeholder="Buscar por...">
+						
+					</form>
+
+				</div>
+				
+				<img onclick="searchExample();" class="dv-margin-left-hdpi dv-vertical-align-middle dv-cursor" src="@_ROOT/res/img/icon/search.svg" width="24">
+				
+			</div>
+
+		</div>
+		
+		<div id="dv-cookie" style="display: none;">
+
+			<div class="dv-line-mobile dv-position-fixed-mobile dv-right dv-bottom dv-margin-hdpi dv-white-bg dv-border dv-radius dv-shadow">					
+
+				<div class="dv-column dv-vertical-align-center dv-horizontal-align-center">
+		
+					<div class="dv-padding-hdpi">
+					
+						<div class="dv-line-mobile dv-margin-bottom-mdpi">
+
+							<div class="dv-column dv-vertical-align-center dv-horizontal-align-left">
+							
+								<p class="dv-bold">Política de privacidade</p>
+
+							</div>
+							
+							<div class="dv-column dv-vertical-align-center dv-horizontal-align-right">
+							
+								<img onclick="sD(gI('dv-cookie'), 'none');" class="dv-cursor" src="@_ROOT/res/img/icon/close.svg" width="16">
+									
+							</div>
+					
+						</div>
+					
+						<p class="dv-margin-bottom-mdpi dv-font-size-ldpi">Utilizamos Cookies para entregar conteúdos com relevância para você.<br>Para isso, precisamos que você aceite os Cookies no seu navegador.<br>Para saber mais, acesse a nossa página de <a href="@_ROOT/politica_de_privacidade" class="dv-font-size-ldpi dv-underline dv-blue">política de privacidade</a>.</p>
+			
+						<div class="dv-line">
+						
+							<div class="dv-column dv-horizontal-align-right">
+							
+								<div>
+
+									<form onsubmit="setCookie('cookie', 'activated', 365); sD(gI('dv-cookie'), 'none'); return false;">
+
+										<button type="submit" class="dv-padding-mdpi dv-text-align-center dv-radius dv-blue-border dv-blue-bg dv-white dv-underline dv-cursor"><img class="dv-vertical-align-middle dv-margin-right-ldpi" src="@_ROOT/res/img/icon/white-check.svg" width="16">Aceitar os Cookies</button>
+
+									</form>
+								
+								</div>
+								
+							</div>
+							
+						</div>
+
+					</div>
+
+				</div>
+				
+			</div>
+		
+		</div>
+
+		<div id="dv-loading" class="dv-position-fixed-mobile dv-top dv-left dv-full-width dv-full-height-mobile dv-dark-opacity" style="display: none;">
+		
+			<div class="dv-line-mobile dv-full-height-mobile">
+
+				<div class="dv-column dv-horizontal-align-center dv-vertical-align-center">
+
+					<h1 class="dv-bold dv-white">getz</h1>
+
+				</div>
+				
+			</div>		
+
+		</div>
+
+		<div id="dv-message" class="dv-position-fixed-mobile dv-top dv-left dv-full-width dv-full-height-mobile dv-dark-opacity" style="display: none;">
+		
+			<div class="dv-line-mobile dv-full-height-mobile">
+
+				<div class="dv-column dv-horizontal-align-center dv-vertical-align-center">
+				
+					<div class="dv-padding-hdpi">
+				
+						<div class="dv-radius dv-white-bg dv-shadow">
+						
+							<div class="dv-line-mobile dv-border-bottom">
+
+								<div class="dv-column dv-vertical-align-center dv-horizontal-align-left">
+								
+									<div class="dv-padding-hdpi">
+								
+										<p id="dv-message-title" class="dv-bold">Title</p>
+										
+									</div>
+								
+								</div>
+								
+								<div class="dv-column dv-vertical-align-center dv-horizontal-align-right">
+								
+									<div class="dv-padding-hdpi">
+								
+										<img id="dv-message-handler" onclick="showMessage();" class="dv-cursor" src="@_ROOT/res/img/icon/close.svg" width="16">
+										
+									</div>
+						
+								</div>
+						
+							</div>
+							
+							<div class="dv-padding-hdpi dv-text-align-center">
+							
+								<img id="dv-message-icon" class="dv-margin-bottom-mdpi" src="@_ROOT/res/img/icon/check-circle-line.svg" width="64">
+							
+								<p id="dv-message-text">Message</p>
+								
+							</div>
+
+						</div>
+						
+					</div>
+
+				</div>
+				
+			</div>		
+
+		</div>		
+
+	</body>
+	
+</html>

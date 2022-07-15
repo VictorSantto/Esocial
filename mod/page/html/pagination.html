@@ -1,0 +1,32 @@
+		
+		<one(@_YOUR_TABLE)>
+						
+			<script>gz_pages = <gz>@_YOUR_TABLE.pages</gz>;</script>
+			
+			<div id="gz-pagination" style="display: none;">
+			
+				<div class="dv-line">
+
+					<div class="dv-column dv-text-align-center">
+			
+						<div class="dv-padding-hdpi">			
+
+							<p id="gz-first" onclick="toPage(1);" class="dv-padding-mdpi dv-border dv-radius dv-bold dv-cursor" style="display: none;">1</p>
+							
+							<p id="gz-back" onclick="goBack();" class="dv-padding-mdpi dv-border dv-radius dv-bold dv-cursor" style="display: none;">Previous</p>
+							
+							<p class="dv-display-inline dv-padding-mdpi dv-border dv-radius dv-gray-bg dv-bold dv-gray"><gz>@_YOUR_TABLE.page</gz></p>
+
+							<p id="gz-next" onclick="goNext(<gz>@_YOUR_TABLE.size</gz>);" class="dv-padding-mdpi dv-border dv-radius dv-bold dv-cursor" style="display: none;">Next</p>
+
+							<p id="gz-last" onclick="goLast(<gz>@_YOUR_TABLE.size</gz>);" class="dv-padding-mdpi dv-border dv-radius dv-bold dv-cursor" style="display: none;"><gz>@_YOUR_TABLE.pages</gz></p>
+
+						</div>
+						
+					</div>
+					
+				</div>
+
+			</div>							
+			
+		</one>

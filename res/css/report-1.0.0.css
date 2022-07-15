@@ -1,0 +1,57 @@
+/**
+ * Report CSS.
+ * 
+ * @author  Mario Sakamoto <mskamot@gmail.com>
+ * @license MIT http://www.opensource.org/licenses/MIT
+ * @see     https://wtag.com.br/divmon
+ * @version 1.0.0, 26 Jul 2014
+ */
+@page { 
+	size: A4 portrait; 
+	margin: 0;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+}
+
+table { 
+	margin: 0 auto;
+	width: 793.7px !important;
+}
+
+* { font-size: 12px !important; }
+
+h1 { font-size: 14px !important; }
+
+@media only screen and (min-width: 960px) {
+
+	.dv-print { display: none;background: #000; }
+
+}
+
+@media print {
+	
+	table { width: 100% !important; }
+
+	thead {
+		display: table-header-group;
+		position: relative;
+		top: 0;
+	}
+
+	tfoot {
+		display: table-footer-group;
+		position: relative;
+		top: 0;
+	}
+	
+	tr { page-break-inside: avoid; }
+	
+		td { vertical-align: baseline; }
+	
+	.dv-no-print { display: none; }
+	
+}

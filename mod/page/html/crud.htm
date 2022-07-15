@@ -1,0 +1,208 @@
+
+		<div class="dv-line dv-border-bottom">
+			
+			<div class="dv-column">
+
+				<div class="dv-center">
+				
+					<div class="dv-line">
+					
+						<div class="dv-column">
+						
+							<div class="dv-padding-hdpi">
+
+								<p><img class="dv-vertical-align-middle dv-margin-right-ldpi" src="@_ROOT/res/img/icon/gray-sheet.svg" width="16">Total de registro(s): <span class="dv-bold"><one(crud)><gz>crud.size</gz></one><one(data_not_found)><gz>size</gz></one></span></p>
+								
+							</div>
+							
+						</div>
+						
+						<div class="dv-column">
+						
+							<div class="dv-padding-hdpi">
+
+								<p onclick="crudShowCreate();" class="dv-text-align-right dv-green dv-underline dv-cursor"><img class="dv-vertical-align-middle dv-margin-right-ldpi" src="@_ROOT/res/img/icon/gray-add-circle-line.svg" width="16">Adicionar</p>
+								
+							</div>
+							
+						</div>						
+						
+					</div>
+					
+				</div>
+			
+			</div>
+			
+		</div>
+		
+		<div class="dv-line dv-border-bottom">
+			
+			<div class="dv-column">		
+
+				<div class="dv-center">
+		
+					<div class="dv-line">
+					
+						<div class="dv-column">
+						
+							<div class="dv-padding-hdpi">
+							
+								<table>
+
+									<tr>
+
+										<th style="width: 80%;" class="dv-padding-mdpi dv-gray">Screen</th>
+
+										<th style="width: 20%;" class="dv-padding-mdpi dv-text-align-right dv-gray">Opções</th>		
+
+									</tr>
+
+									<for(crud)>
+
+										<tr class="dv-border-top">
+
+											<td class="dv-padding-mdpi"><gz>crud.screen</gz></td>
+											
+											<td class="dv-padding-mdpi dv-text-align-right"><span onclick="crudShowUpdate(<gz>crud.id</gz>);" class="dv-blue dv-underline dv-cursor"><img class="dv-vertical-align-middle dv-margin-right-ldpi" src="@_ROOT/res/img/icon/gray-check-circle-line.svg" width="16">Editar</span> <span class="dv-red dv-underline dv-cursor" onclick="crudDelete(<gz>crud.id</gz>);"><img class="dv-vertical-align-middle dv-margin-right-ldpi" src="@_ROOT/res/img/icon/red-remove-circle-line.svg" width="16">Excluir</span></td>
+											
+										</tr>
+
+									</for>
+
+									<one(data_not_found)>
+										
+										<tr class="dv-border-top">
+										
+											<td colspan="2" class="dv-padding-mdpi"><gz>value</gz></td>
+
+										</tr>
+									
+									</one>
+									
+								</table>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<div id="dv-form-title-controller" class="dv-line dv-border-bottom" style="display: none;">
+		
+			<div class="dv-column">		
+
+				<div class="dv-center">
+		
+					<div class="dv-line">
+					
+						<div class="dv-column">
+						
+							<div class="dv-padding-hdpi">
+			
+								<p class="dv-gray"><img class="dv-vertical-align-middle dv-margin-right-ldpi" src="@_ROOT/res/img/icon/gray-sheet.svg" width="16">Formulário</p>
+
+								<p id="dv-form-title-controller-content" class="dv-bold"></p>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>		
+		
+		<div id="dv-form-controller" class="dv-line dv-border-bottom" style="display: none;">
+			
+			<div class="dv-column">		
+
+				<div class="dv-center">
+		
+					<div class="dv-line">
+					
+						<div class="dv-column">
+						
+							<div class="dv-padding-hdpi">
+
+								<form id="dv-form" onsubmit="crudController(); return false;">
+								
+									<input id="crud.id" type="hidden">
+									
+									<div class="dv-line">
+									
+										<div class="dv-column">
+										
+											<div class="dv-padding-mdpi">
+									
+												<label for="crud.screen" class="dv-margin-bottom-ldpi dv-cursor">Screen</label>
+									
+												<input id="crud.screen" type="text" name="crud.screen" class="dv-padding-mdpi dv-margin-bottom-mdpi dv-radius dv-bold dv-required">		
+										
+											</div>
+										
+										</div>
+										
+									</div>									
+
+									<label class="dv-margin-bottom-ldpi">Upload <span class="dv-gray">(Opcional) (Máx. 10MB)</span><span id="dv-clear-selected-file-crud.upload" style="display: none;" class="dv-margin-left-ldpi dv-red dv-underline dv-cursor" onclick="clearSelectedFile('crud.upload');"><img class="dv-vertical-align-middle dv-margin-right-ldpi" src="@_ROOT/res/img/icon/red-close-circle-line.svg" width="16">(Limpar o campo)</span><span id="dv-download-file-crud.upload" class="dv-margin-left-ldpi dv-blue dv-underline dv-cursor" onclick="goToBlank('@_ROOT/file/crud/<gz>crud.id</gz>');"><img class="dv-vertical-align-middle dv-margin-right-ldpi" src="@_ROOT/res/img/icon/gray-download.svg" width="16">Baixar o arquivo</span><br><span class="dv-gray">Obs.: Ao enviar um novo arquivo, ele irá substituir o arquivo atual.</span></label>		
+									
+									<div class="dv-padding-mdpi dv-margin-bottom-mdpi dv-radius dv-border-dashed">
+									
+										<input type="hidden" id="crud.upload-base64">
+								
+										<input type="file" id="crud.upload" name="crud.upload" onchange="fileController(this);">
+									
+										<label id="crud.upload.label" for="crud.upload" class="dv-display-inline dv-padding-top-mdpi dv-padding-bottom-mdpi dv-text-align-center dv-radius dv-underline">Escolher um arquivo<span id="crud.upload.label.span" class="dv-input-file-label-empty"></span></label>
+									
+									</div>
+
+									<button type="submit" class="dv-padding-mdpi dv-text-align-center dv-radius dv-green-border dv-green-bg dv-white dv-underline dv-cursor"><img class="dv-vertical-align-middle dv-margin-right-ldpi" src="@_ROOT/res/img/icon/white-check.svg" width="16">Salvar o registro</button>
+
+								</form>
+	
+							</div>
+							
+						</div>
+						
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>	
+		
+		<div id="dv-form-controller-cancel" class="dv-line dv-border-bottom" style="display: none;">
+			
+			<div class="dv-column">		
+			
+				<div class="dv-center">
+		
+					<div class="dv-line">
+					
+						<div class="dv-column">
+						
+							<div class="dv-padding-hdpi">
+							
+								<p onclick="location.reload();" class="dv-red dv-underline dv-cursor"><img class="dv-vertical-align-middle dv-margin-right-ldpi" src="@_ROOT/res/img/icon/red-close-circle-line.svg" width="16">Cancelar a operação</p>
+		
+							</div>
+							
+						</div>
+
+					</div>
+					
+				</div>
+				
+			</div>
+
+		</div>	

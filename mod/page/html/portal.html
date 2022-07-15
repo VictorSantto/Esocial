@@ -1,0 +1,367 @@
+		
+		
+		<div class="dv-line">
+
+			<div class="dv-column">
+
+				<div class="dv-padding-mdpi">
+
+					<div class="dv-center">
+
+						<div class="dv-line-mobile">
+
+							<div class="dv-padding-mdpi">
+						
+								<a href="@_ROOT/home">
+
+									<img src="@_ROOT/mod/page/img/wtag.svg" width="196">
+
+								</a>
+
+							</div>
+						
+							<div class="dv-column dv-horizontal-align-right dv-vertical-align-center">
+
+								<div>
+							
+									<div class="dv-screen dv-padding-mdpi">
+									
+										<ul>
+									
+											<for(menus)>
+											
+												<li class="dv-display-inline dv-padding-ldpi dv-cursor">
+
+													<a class="dv-font-size-ldpi dv-bold" <gz>menus.link.view</gz>><gz>menus.menu</gz></a>
+
+													<ul class="dv-last-index dv-red-bg dv-radius dv-shadow <gz>menus.menu_submenus_padding</gz>">
+											
+														<for(menu_submenus)>
+
+															<li class="dv-padding-right-mdpi dv-padding-left-mdpi">
+																
+																<a class="dv-white dv-font-size-ldpi dv-bold" <gz>menu_submenus.link.view</gz>><gz>menu_submenus.menu_submenu</gz></a>
+
+																<ul class="dv-margin-left-ldpi dv-last-index dv-white-bg dv-radius dv-shadow <gz>menu_submenus.menu_submenu_submenus_padding</gz>">
+
+																	<for(menu_submenu_submenus)>
+
+																		<li class="dv-padding-right-mdpi dv-padding-left-mdpi">
+
+																			<a class="dv-font-size-ldpi dv-bold" <gz>menu_submenu_submenus.link.view</gz>><gz>menu_submenu_submenus.menu_submenu_submenu</gz></a>
+																			
+																		</li>
+
+																	</for>
+
+																</ul>
+
+															</li>
+														
+														</for>
+														
+													</ul>
+													
+												</li>
+												
+											</for>
+										
+										</ul>
+									
+									</div>
+
+									<div class="dv-mobile dv-padding-mdpi">
+
+										<img onclick="showMenu();" src="@_ROOT/mod/page/img/icon/menu.svg" width="32">
+										
+									</div>
+
+								</div>
+								
+							</div>
+							
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+		
+		<script>var slideTotal = <one(slides)><gz>slides.size</gz></one>;</script>
+		
+		<div class="dv-line">
+
+			<div class="dv-column">
+
+				<div class="dv-center dv-position-relative">
+
+					<for(slides)>
+					
+						<div class="dv-line" id="dv-slide-<gz>slides.line</gz>" style="<gz>slides.display</gz>">
+
+							<div class="dv-column dv-padding-hdpi"> 
+							
+								<div class="dv-line dv-gray-bg dv-radius">
+									
+									<div class="dv-column">
+										
+										<div class="dv-line-mobile">
+
+											<div class="dv-column dv-position-relative dv-radius" style="height: 320px;">
+											
+												<a <gz>slides.link.view</gz>>
+											
+													<img class="dv-position-absolute-mobile dv-top dv-left" src="@_ROOT/res/img/hdpi/<gz>slides.foto</gz>" style="width:100%; height:100%; object-fit:cover;">
+													
+													<div class="dv-position-absolute-mobile dv-top dv-left dv-full-width dv-full-height-mobile dv-left-gradient-opacity">
+
+													</div>
+
+													<div class="dv-position-absolute-mobile dv-top-bottom dv-left dv-full-width dv-screen">
+
+														<div class="dv-line-mobile">
+
+															<div class="dv-column-two"> 
+
+																<div class="dv-padding-xdpi">
+														
+																	<h4 class="dv-margin-bottom-ldpi dv-white dv-bold dv-line-height"><gz>slides.slide</gz></h4>
+
+																	<p class="dv-margin-bottom-mdpi dv-white"><gz>slides.descricao</gz></p>
+
+																	<p class="dv-padding-top-ldpi dv-padding-right-mdpi dv-padding-bottom-ldpi dv-padding-left-mdpi dv-white dv-red-bg dv-display-inline dv-radius dv-bold">Saiba mais</p>
+
+																</div>
+
+															</div>
+
+														</div>
+														
+													</div>
+
+													<div class="dv-position-absolute-mobile dv-top-bottom dv-left dv-full-width dv-mobile">
+
+														<div class="dv-line-mobile">
+
+															<div class="dv-column"> 
+
+																<div class="dv-padding-xdpi">
+														
+																	<h4 class="dv-margin-bottom-ldpi dv-white dv-bold dv-line-height"><gz>slides.slide</gz></h4>
+
+																	<p class="dv-margin-bottom-mdpi dv-white"><gz>slides.descricao</gz></p>
+
+																	<p class="dv-padding-top-ldpi dv-padding-right-mdpi dv-padding-bottom-ldpi dv-padding-left-mdpi dv-white primary-bg dv-display-inline dv-radius dv-bold">Saiba mais</p>
+
+																</div>
+
+															</div>
+
+														</div>
+														
+													</div>
+
+												</a>
+
+											</div>
+
+										</div>
+
+									</div>
+									
+								</div>
+
+							</div>
+
+						</div>
+					
+					</for>
+
+					<div class="dv-position-absolute-mobile dv-top-bottom dv-left">
+
+						<div class="dv-line">
+
+							<div class="dv-column dv-vertical-align-center dv-horizontal-align-left">
+
+								<div class="dv-padding-mdpi">
+
+									<div class="dv-radius dv-red-bg" style="width: 32px; height: 32px;">
+
+										<div class="dv-line-mobile dv-full-height-mobile dv-full-width">
+
+											<div class="dv-column dv-vertical-align-center dv-horizontal-align-center dv-cursor" onclick="setBackSlide();">
+
+												<span class="dv-svg-ldpi dv-white"><file(img/icon/back.svg)></span>
+
+											</div>
+
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="dv-position-absolute-mobile dv-top-bottom dv-right">
+
+						<div class="dv-line">
+
+							<div class="dv-column dv-vertical-align-center dv-horizontal-align-left">
+
+								<div class="dv-padding-mdpi">
+
+									<div class="dv-radius dv-red-bg" style="width: 32px; height: 32px;">
+
+										<div class="dv-line-mobile dv-full-height-mobile dv-full-width">
+
+											<div class="dv-column dv-vertical-align-center dv-horizontal-align-center dv-cursor" onclick="setNextSlide();">
+
+												<span class="dv-svg-ldpi dv-white"><file(img/icon/next.svg)></span>
+
+											</div>
+
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="dv-position-absolute-mobile dv-right-left dv-bottom dv-padding-hdpi ">
+
+						<div class="dv-margin-left-ldpi">
+
+							<for(slides)>
+							
+								<img id="dv-slide-selected-<gz>slides.line</gz>" class="dv-margin-top-mdpi dv-margin-right-ldpi dv-margin-bottom-mdpi dv-cursor dv-circle" onclick="setSlide('<gz>slides.line</gz>')" src="@_ROOT/mod/page/img/<gz>slides.selected</gz>.svg" width="16">
+												
+							</for>
+
+						</div>
+			
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+		
+		<div class="dv-line">
+
+			<div class="dv-column dv-horizontal-align-center">
+
+				<div class="dv-main">
+	
+					<div class="dv-line">
+					
+						<div class="dv-column">
+						
+							<div class="dv-padding-mdpi">
+							
+								<for(noticias)>
+								
+									<div class="dv-line">
+									
+										<div class="dv-column">
+										
+											<div class="dv-padding-mdpi">
+											
+												<div class="dv-margin-bottom-mdpi dv-horizontal-align-center dv-position-relative">
+
+													<img class="dv-full-width dv-radius" src="@_ROOT/res/img/mdpi/<gz>noticias.foto</gz>" style="height: 240px; object-fit: cover;">
+												
+												</div>
+											
+											</div>
+											
+										</div>
+					
+										<div class="dv-column dv-vertical-align-center">
+										
+											<div class="dv-padding-mdpi">
+											
+												<p class="dv-margin-bottom-ldpi"><gz>tipos_noticias.tipo_noticia</gz></p>
+											
+												<h6 class="dv-margin-bottom-ldpi dv-bold"><gz>noticias.noticia</gz></h6>
+												
+												<div class="dv-line dv-margin-bottom-hdpi">
+												
+													<img class="dv-margin-right-ldpi" src="@_ROOT/res/img/mdpi/<gz>usuarios.foto</gz>" width="24">
+												
+													<div class="dv-column dv-vertical-align-center">
+													
+														<div>
+														
+															<p class="dv-font-size-ldpi dv-gray">Publicado por <gz>usuarios.usuario</gz> em <gz>noticias.cadastrado</gz><p>
+														
+														</div>
+													
+													</div>
+												
+												</div>
+
+											</div>
+											
+										</div>
+										
+									</div>
+								
+								</for>
+								
+								<one(noticias)>
+									
+									<script>gz_pages = <gz>noticias.pages</gz>;</script>
+									
+									<div id="gz-pagination" style="display: none;">
+									
+										<div class="dv-line">
+
+											<div class="dv-column dv-text-align-center">
+									
+												<div class="dv-padding-hdpi">			
+
+													<p id="gz-first" onclick="toPage(1);" class="dv-padding-mdpi dv-border dv-radius dv-bold dv-cursor" style="display: none;">1</p>
+													
+													<p id="gz-back" onclick="goBack();" class="dv-padding-mdpi dv-border dv-radius dv-bold dv-cursor" style="display: none;">Previous</p>
+													
+													<p class="dv-display-inline dv-padding-mdpi dv-border dv-radius dv-gray-bg dv-bold dv-gray"><gz>noticias.page</gz></p>
+
+													<p id="gz-next" onclick="goNext(<gz>noticias.size</gz>);" class="dv-padding-mdpi dv-border dv-radius dv-bold dv-cursor" style="display: none;">Next</p>
+
+													<p id="gz-last" onclick="goLast(<gz>noticias.size</gz>);" class="dv-padding-mdpi dv-border dv-radius dv-bold dv-cursor" style="display: none;"><gz>noticias.pages</gz></p>
+
+												</div>
+												
+											</div>
+											
+										</div>
+
+									</div>							
+									
+								</one>
+							
+							</div>
+						
+						</div>
+						
+					</div>
+
+				</div>
+				
+			</div>
+			
+		</div>

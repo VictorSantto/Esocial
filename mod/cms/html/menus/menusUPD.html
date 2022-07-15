@@ -1,0 +1,127 @@
+<!-- Update View -->
+	
+	<!-- Content -->
+
+	<div id="gz-content" class="dv-f-r">
+	
+		<p class="dv-mt-mdpi dv-mr-xdpi dv-mb-mdpi dv-ml-xdpi gz-gray">
+		
+			<one(titles)>
+			
+				<gz>menus.menu</gz> /
+
+				<gz>telas.tela</gz> / 
+				
+				<span class="gz-black gz-bold">
+				
+					@_LAN_UPDATE
+					
+				</span>
+				
+			</one>	
+				
+		</p>
+	
+		<for(menus)>
+	
+			<!-- Form -->
+				
+			<form id="gz-form" class="dv-f-l dv-ml-xdpi dv-pt-ldpi">
+						
+				<!-- Menu -->
+				
+				<div class="gz-block dv-f-l">
+		
+					<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Menu</div>
+
+				</div>
+
+				<div class="gz-block dv-f-l">
+					
+					<input class="gz-textbox-mdpi dv-f-l dv-mt-ldpi" type="text" 
+							id="menus.menu" name="menus.menu" value="<gz>menus.menu.format.json</gz>">
+				
+				</div>
+						
+				<!-- Link -->
+				
+				<div class="gz-block dv-f-l">
+		
+					<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Link</div>
+
+				</div>
+
+				<div class="gz-block dv-f-l">
+					
+					<input class="gz-textbox-mdpi dv-f-l dv-mt-ldpi" type="text" 
+							id="menus.link" name="menus.link" value="<gz>menus.link.format.json</gz>">
+				
+				</div>
+					
+				<!-- Situacao_registro -->
+		
+				<div class="gz-block dv-f-l">
+		
+					<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-mdpi">Situacao_registro</div> 
+					
+				</div>
+				
+				<div class="gz-block dv-f-l">
+				
+					<select id="menus.situacoes_registros" class="gz-select-mdpi dv-f-l dv-mt-ldpi gz-required">
+							
+						<for(menus.situacoes_registros)>
+						
+							<option value="<gz>situacoes_registros.id</gz>" <gz>situacoes_registros.selected</gz>>
+							
+								<gz>situacoes_registros.situacao_registro</gz>
+							
+							</option>
+
+						</for>
+					
+					</select>
+				
+				</div>
+
+				<!-- Ok -->
+
+				<div class="gz-button dv-f-l dv-mt-mdpi dv-mr-hdpi dv-mb-xdpi">
+
+					<a href="#" onclick="request('menus', 'update'); return false;" class="gz-tooltip">
+
+						<img src="@_ROOT/mod/cms/img/icon/ok.png" />
+
+						<span class="gz-span-top-right @_THEME">
+
+							@_LAN_CONFIRM
+
+						</span>
+
+					</a>
+
+				</div>
+				
+				<!-- Cancel -->
+				
+				<div class="gz-button dv-f-l dv-mt-mdpi dv-mb-xdpi">
+
+					<a href="#" onclick="cancel(); return false;" class="gz-tooltip">
+
+						<img src="@_ROOT/mod/cms/img/icon/cancel.png"/>
+						
+						<span class="gz-span-top-right @_THEME">
+
+							@_LAN_CANCEL
+
+						</span>
+
+					</a>
+
+				</div>
+					
+			</form>
+			
+		</for>
+		
+	</div>

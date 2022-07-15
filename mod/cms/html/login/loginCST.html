@@ -1,0 +1,76 @@
+<!-- Custom View -->
+
+	<div class="login-bg"></div>
+
+	<div class="dv-container">
+	
+		<div class="dv-center">
+		
+			<div class="dv-slide">
+			
+				<div class="dv-line">
+				
+					<div class="dv-column">
+					
+						<div id="gz-login" class="dv-ta-c">
+						
+							<h1 class="dv-mb-hdpi" style="font-size: 32px; font-weight: 700;">Login</h1>
+
+							<form id="gz-form">
+							
+								<!-- E-mail -->
+								
+								<div class="gz-block dv-f-l dv-ta-l">
+							
+									<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-ldpi">E-mail</div>
+								
+								</div>
+								
+								<div class="gz-block dv-f-l">
+												
+									<input class="gz-textbox-mdpi dv-f-l dv-mt-mdpi gz-required" type="text" 
+											name="usuarios.email" value="" onkeypress="loginOnKeyPress(event);">
+									
+								</div>
+								
+								<!-- Senha -->
+								
+								<div class="gz-block dv-f-l dv-ta-l">
+							
+									<div class="gz-label-mdpi dv-f-l dv-pt-mdpi dv-pb-ldpi">Senha</div>
+								
+								</div>
+								
+								<div class="gz-block dv-f-l">
+												
+									<input class="gz-textbox-mdpi dv-f-l dv-mt-mdpi gz-required" type="password" 
+											name="usuarios.senha" value="" onkeypress="loginOnKeyPress(event);">
+									
+								</div>
+								
+								<!-- Action -->
+
+								<div id="gz-button-action" class="gz-button dv-f-l dv-mt-hdpi dv-mr-hdpi dv-mb-xdpi"
+										onclick="request('login', 'login');">
+
+									<a href="#" onclick="return false;">
+
+										<img id="m-image-action" class="" src="@_ROOT/mod/cms/img/icon/ok.png" />
+
+									</a>
+
+								</div>
+
+							</form>
+						
+						</div>
+						
+					</div>
+				
+				</div>
+			
+			</div>
+		
+		</div>
+	
+	</div>

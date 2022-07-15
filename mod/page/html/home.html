@@ -1,0 +1,125 @@
+<div class="dv-center">
+	
+	<div class="dv-line">
+
+		<div class="dv-column">
+			<h3 class="dv-margin-top-hdpi dv-bold extra-bold">Eventos</h3>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="dv-margin-xdpi">
+	
+	<div class="dv-line">
+
+		<div class="dv-column dv-position-relative dv-vertical-align-center">
+	
+			<div class="dv-full-width dv-padding-top-mdpi dv-padding-bottom-mdpi">
+	
+				<form onsubmit="searchExample(); return false;">
+	
+					<input class="dv-padding-mdpi dv-white transparent-bg border-input italic" type="text" id="pesquisa"
+						name="pesquisa" autocomplete="off" placeholder="Busque por nome ou atividade">
+	
+				</form>
+	
+			</div>
+	
+			<img onclick="searchExample();" class="dv-position-absolute dv-right dv-margin-right-hdpi dv-cursor"
+				src="@_ROOT/mod/page/img/icon/search.svg" width="24px;" />
+	
+		</div>
+	
+	</div>
+	
+	<div class="dv-line">
+
+		<div class="dv-column dv-horizontal-align-right">
+			<a href="http://localhost/esocial/retorno">
+				<button class="button dv-margin-mdpi white-text">Evento</button>
+			</a>
+		</div>
+
+	</div>
+	
+	<div class="dv-line">
+
+		<div class="dv-column">
+	
+			<table>
+				
+				<thead>
+
+					<tr class="tituloTabela">
+						<th class="dv-padding-mdpi dv-bold">
+							ID
+						</th>
+		
+						<th class="dv-bold">
+							Mês/Ano
+						</th>
+		
+						<th class="dv-bold">
+							Situação
+						</th>
+	
+						<th class="dv-bold">
+							Ações
+						</th>
+					
+					</tr>
+
+				</thead>
+
+				<tr class="textoTabela">
+
+				<tbody class="dv-center dv-text-align-center" id="retornos"></tbody>
+				
+				  <tr class="textoTabela">  
+					<td class="dv-center dv-text-align-center"></td>
+					<td class="dv-center dv-text-align-center"></td>
+					<td class="dv-center dv-text-align-center"></td>
+					<td class="dv-center dv-padding-mdpi">
+	<!-- 					<div class="dv-line">
+	
+							<div class="dv-column">
+	
+								<a href="http://localhost/esocial">
+									<img  class="" src="@_ROOT/mod/page/img/add-icon.svg"/>
+                                    
+								</a>
+	
+							</div>
+
+                            <div class="dv-column">
+	
+								<a href="http://localhost/esocial">
+									<img  class="" src="@_ROOT/mod/page/img/edit-icon.svg"/>
+                                   
+								</a>
+	
+							</div>
+
+						</div>
+ -->
+					</td>
+
+				</tr> 
+				
+			</table>
+	
+		</div>
+
+	</div>
+
+	<div class="dv-line dv-margin-top-hdpi dv-margin-bottom-hdpi">
+
+		<div class="dv-column dv-horizontal-align-left">
+			<a href="http://localhost/esocial/home" class="dv-margin-top-xdpi dv-margin-bottom-xdpi link dv-bold"><u>Voltar</u></a>
+		</div>
+		
+	</div>
+
+</div>

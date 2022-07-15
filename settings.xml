@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<settings>
+	<project>integracaoEsocial</project>
+	<package>esocial</package>
+	<portal>false</portal>
+	<connection>
+		<is_official>false</is_official>
+	</connection>
+	<show_erros>false</show_erros>
+	 <jwt>jwt</jwt> 
+</settings>

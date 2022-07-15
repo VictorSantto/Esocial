@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Data Report</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="content-language" content="pt-br">
+		<link rel="icon" href="@_ROOT/mod/page/img/wtag.svg">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+		<link rel="stylesheet" href="@_ROOT/res/css/divmon-1.0.0.css">
+		<link rel="stylesheet" href="@_ROOT/res/css/report-1.0.0.css">
+		<script charset="UTF-8" src="@_ROOT/res/js/divmon.js"></script>
+		<script charset="UTF-8" src="@_ROOT/mod/page/js/handler.js"></script>		
+	</head>
+	
+	<body class="dv-margin-right-hdpi dv-margin-left-hdpi">
+	
+		<div class="dv-position-fixed dv-margin-hdpi dv-no-print dv-gray-bg">
+	
+			<p class="dv-padding-mdpi dv-border dv-radius dv-bold dv-cursor" onclick="window.print();">Imprimir</p>
+
+		</div>
+
+		<table id="dv-report">
+		
+			<thead id="dv-thead">
+			
+				<tr class="dv-border-bottom">
+				
+					<td colspan="3">
+					
+						<div class="dv-line">
+						
+							<div class="dv-column dv-text-align-center">
+							
+								<div class="dv-padding-mdpi">
+								
+									<img src="@_ROOT/mod/page/img/wtag.svg" height="96">
+									
+									<p class="dv-bold">Wtag Digital</p>
+									
+									<h1 class="dv-margin-bottom-ldpi dv-bold">Data Report @_DATE</h1>
+									
+									<p><one(report)><gz>filter</gz></one></p>
+								
+								</div>
+								
+							</div>
+							
+						</div>
+						
+					</td>
+					
+				</tr>
+				
+			</thead>
+  
+			<tbody id="dv-tbody">
+
+				<tr>
+				
+					<td colspan="3">
+				
+						<table>
+
+							<tr class="dv-gray-bg dv-border-bottom">
+
+								<th style="width: 60%;">
+								
+									<p class="dv-margin-left-ldpi dv-margin-right-ldpi dv-bold"><img class="dv-margin-right-ldpi" src="@_ROOT/res/img/icon/arrow.svg" width="10">Column</p>
+								
+								</th>
+
+								<th style="width: 20%;">
+								
+									<p class="dv-margin-left-ldpi dv-margin-right-ldpi dv-bold dv-text-align-right">$ 10,00</p>
+										
+								</th>
+								
+								<th style="width: 20%;">
+								
+									<p class="dv-margin-left-ldpi dv-margin-right-ldpi dv-bold dv-text-align-right">10%</p>
+										
+								</th>
+
+							</tr>
+
+							<tr class="dv-border-bottom">
+
+								<td style="width: 60%;">
+								
+									<p class="dv-margin-left-ldpi dv-margin-right-ldpi"><span class="dv-bold">1.</span> Data List</p>
+								
+								</td>
+								
+								<td style="width: 20%;">
+								
+									<p class="dv-margin-left-ldpi dv-margin-right-ldpi dv-text-align-right">R$ 10,00</p>
+										
+								</td>
+								
+								<td style="width: 20%;">
+								
+									<p class="dv-margin-left-ldpi dv-margin-right-ldpi dv-text-align-right">
+
+										<div class="dv-line">
+
+											<div class="dv-column dv-vertical-align-center dv-horizontal-align-right">
+										
+												<span class="dv-display-inline dv-vertical-align-middle dv-green-bg dv-radius" style="width: 10%; height: 10px;"></span> 
+										
+											</div>
+
+											<span class="dv-margin-left-ldpi dv-margin-right-ldpi dv-vertical-align-middle">10%</span>
+
+										</div>
+									
+									</p>
+										
+								</td>
+
+							</tr>
+
+							<tr class="dv-border-bottom" style="<one(view)><gz>board.display</gz></one>">
+
+								<td colspan="3">
+								
+									<p class="dv-margin-left-ldpi dv-margin-right-ldpi dv-text-align-right dv-bold dv-underline">Total: 1</p>
+								
+								</td>
+								
+							</tr>
+
+						</table>
+
+					</td>
+
+				</tr>
+			
+				<tr class="dv-border-bottom">
+	
+					<td colspan="3">
+					
+						<p class="dv-margin-left-ldpi dv-margin-right-ldpi"><span class="dv-bold">1.</span> Data List</p>
+						
+					</td>
+
+				</tr>
+
+				<tr class="dv-gray-bg dv-border-bottom">
+
+					<th colspan="3">
+					
+						<p class="dv-margin-left-hdpi dv-margin-right-ldpi dv-bold"><img class="dv-margin-right-ldpi" src="@_ROOT/res/img/icon/arrow.svg" width="10">Column</p>
+					
+					</th>
+
+				</tr>
+
+				<tr class="dv-border-bottom">
+
+					<td colspan="3">
+					
+						<p class="dv-margin-left-hdpi dv-margin-right-ldpi"><span class="dv-bold">1. Column value.</span></p>
+						
+					</td>
+
+				</tr>
+
+				<tr class="dv-border-top dv-border-bottom">
+	 
+					<td colspan="3">
+					
+						<p class="dv-margin-left-hdpi dv-margin-right-hdpi dv-bold dv-text-align-right dv-underline">1. Total: 1</p>
+						
+					</td>
+					
+				</tr>
+
+			</tbody>
+			
+			<tfoot id="dv-tfoot">
+
+				<tr>
+				
+					<td colspan="3">
+					
+						<div class="dv-line dv-margin-top-mdpi dv-margin-bottom-mdpi dv-gray-bg dv-border-top dv-border-bottom">
+						
+							<div class="dv-column">
+							
+								<div>
+					
+									<p class="dv-margin-left-ldpi dv-bold">Wtag © @_DATE</p>
+						
+									<p class="dv-margin-left-ldpi ">Data Report</p>
+							
+								</div>
+								
+							</div>
+							
+							<div class="dv-column dv-text-align-right">
+							
+								<div>
+					
+									<p class="dv-margin-right-ldpi ">Relatório gerado em <span class="dv-bold">@_DATE</span></p>
+						
+									<p class="dv-margin-right-ldpi ">por <span class="dv-bold">mskamot</span></p>
+							
+								</div>
+								
+							</div>
+							
+						</div>
+						
+					</td>
+				
+				</tr>
+				
+			</tfoot>
+				
+		</table>
+		
+	</body>
+	
+</html>

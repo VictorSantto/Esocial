@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+	<project>esocial</project>
+	<domain>https://wtag.com.br/esocial</domain>
+	<localhost>
+		<server>localhost</server>
+		<username>root</username>
+		<password></password>
+		<database>esocial</database>
+	</localhost>
+	<official>
+		<server>@_SERVER</server>
+		<username>@_USERNAME</username>
+		<password>@_PASSWORD</password>
+		<database>@_DATABASE</database>
+	</official>
+</settings>

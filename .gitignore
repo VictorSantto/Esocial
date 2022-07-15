@@ -1,0 +1,8 @@
+_dev/doc/*
+_dev/log/*
+res/doc/*
+res/img/xdpi/*
+res/img/hdpi/*
+res/img/mdpi/*
+res/img/ldpi/*
+!.gitkeep

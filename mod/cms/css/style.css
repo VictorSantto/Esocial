@@ -1,0 +1,81 @@
+/**
+ * Style
+ * 
+ * @author Mario Sakamoto <mskamot@gmail.com>
+ * @license MIT http://www.opensource.org/licenses/MIT
+ * @see https://wtag.com.br/divmon
+ * @since 2014-07-26
+ */
+
+/*
+ * Reset
+ */
+html, body, div, span,
+table, tbody, tr, th, td,
+form, label, input, textarea, select, option, checkbox, button,
+ul, li,
+h1, h2, h3, h4, h5, h6, p,
+img,
+a { }
+
+body { }
+
+table { }
+
+	tr { }
+
+		th { }
+
+		td { }
+
+form { }
+
+	label { }
+
+	input { }
+	
+	textarea { }
+
+	select { }
+	
+		option { }
+		
+	checkbox { }
+
+	button { }
+	
+ul { }
+
+	li { }
+	
+h1 { }
+
+h2 { }
+
+h3 { }
+
+h4 { }
+
+h5 { }
+
+h6 { }
+
+p { }
+
+img { }
+
+a { }
+
+span { }
+
+/**
+ * Id
+ */
+
+/*
+ * Class
+ */
+.span-top-right {
+	margin-top: -65px; 
+	margin-left: 20px;
+}

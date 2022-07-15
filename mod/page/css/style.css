@@ -1,0 +1,117 @@
+/**
+ * Style.
+ * 
+ * @author  Mario Sakamoto <mskamot@gmail.com>
+ * @license MIT http://www.opensource.org/licenses/MIT
+ * @see     https://wtag.com.br/divmon
+ */
+
+/*
+ * Reset
+ */
+html, body, div, span,
+table, thead, tbody, tfoot, tr, th, td,
+form, label, input, textarea, select, option, button,
+ul, li,
+h1, h2, h3, h4, h5, h6, p,
+img,
+a,
+pre, code, 
+iframe { }
+
+html { }
+
+body { }
+
+div { }
+
+span { }
+
+table { }
+
+	thead { }
+
+	tbody { }
+
+	tfoot { }
+
+		tr { }
+
+			th { }
+
+			td { }
+		
+form { }
+
+	label { }
+
+	input { }
+	
+	textarea { }
+
+	select { }
+	
+		option { }
+
+ul { }
+
+	li { }
+	
+h1 { }
+
+h2 { }
+
+h3 { }
+
+h4 { }
+
+h5 { }
+
+h6 { }
+
+p { }
+
+img { }
+
+a { }
+
+/**
+ * Id
+ */
+
+/*
+ * Class
+ */
+
+ .blue-light-border-bottom { border-bottom: solid 3px #00bef2; }
+
+.extra-bold { font-weight: 900; }
+
+.blue { color: #00216c; }
+
+.button {/* Rectangle 164 */
+
+	width: 275px;
+	height: 52px;
+	
+	background: #01216B;
+	border-radius: 5px;}
+
+.white-text {color: #FFFFFF;}
+
+
+.tituloTabela { background: #C4C4C469;
+	border-radius: 5px;}
+
+.button-center {/* center */
+	position: absolute;
+	width: 275px;
+	height: 52px;
+	left: 582px;
+	
+
+	background: #01216B;
+	}
+
+.link{color: #00216c;}
+.link:hover { color: #00bef2; }

@@ -36,32 +36,38 @@ function homeHDL() {
 	const retornos = [
 		{
 			"id" : 1, 
-			"ocorrencia" : 320,
-			"descricao"  : "teste de cadastro" 
+			"mes" : "07/2020",
+			"recibo"  : "teste de cadastro",
+			"situacao" : "validado com sucesso" 
 		},
 		{
 			"id" : 2, 
-			"ocorrencia" : 360,
-			"descricao"  : "teste de visualização" 
+			"mes" : "09/2022",
+			"recibo"  : "teste de visualização",
+			"situacao" : "não enviado" 
 		},
 		{
 			"id" : 3, 
-			"ocorrencia" : 651,
-			"descricao"  : "teste de situação" 
+			"mes" : "11/2021",
+			"recibo"  : "teste de situação",
+			"situacao" : "validado com erro" 
 		}
 	];
 	const tBodyRetorno = gI("retornos")
 	for (let retorno of retornos ){
 		const tr = document.createElement("tr");
 		const tdId = document.createElement("td");
-		const tdOco = document.createElement("td");
-		const tdDesc = document.createElement("td");
+		const tdMes = document.createElement("td");
+		const tdRec = document.createElement("td");
+		const tdSit = document.createElement("td");
 		sH(tdId,retorno.id);
-		sH(tdDesc,retorno.descricao);
-		sH(tdOco,retorno.ocorrencia);
+		sH(tdMes,retorno.mes);
+		sH(tdRec,retorno.recibo);
+		sH(tdSit,retorno.situacao);
 		tr.appendChild(tdId);
-		tr.appendChild(tdOco);
-		tr.appendChild(tdDesc);
+		tr.appendChild(tdMes);
+		tr.appendChild(tdRec);
+		tr.appendChild(tdSit);
 		tBodyRetorno.appendChild(tr);
 	} 
 		

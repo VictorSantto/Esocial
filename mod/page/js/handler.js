@@ -24,54 +24,20 @@ function handler() {
 /*
  * Insert your code here.
  */
-function alterar_a_minha_senhaHDL() { }
+function alterar_a_minha_senhaHDL() { /* TODO document why this function 'alterar_a_minha_senhaHDL' is empty */ }
 
-function ativar_a_minha_contaHDL() { }
+function ativar_a_minha_contaHDL() {  /* TODO document why this function 'ativar_a_minha_contaHDL' is empty */ }
 
-function criar_uma_contaHDL() { }
+function criar_uma_contaHDL() { /* TODO document why this function 'criar_uma_contaHDL' is empty */ }
 
-function esqueci_a_minha_senhaHDL() { }
+function esqueci_a_minha_senhaHDL() { /* TODO document why this function 'esqueci_a_minha_senhaHDL' is empty */ }
 
-function homeHDL() {
-	const eventos = [
-		{
-			"id" : 1, 
-			"mes" : "07/2020",
-			"recibo"  : "teste de cadastro",
-			"situacao" : "validado com sucesso" 
-		},
-		{
-			"id" : 2, 
-			"mes" : "09/2022",
-			"recibo"  : "teste de visualização",
-			"situacao" : "não enviado" 
-		},
-		{
-			"id" : 3, 
-			"mes" : "11/2021",
-			"recibo"  : "teste de situação",
-			"situacao" : "validado com erro" 
-		}
-	];
-	const tBodyEventos = gI("eventos")
-	for (let evento of eventos ){
-		const tr = document.createElement("tr");
-		const tdId = document.createElement("td");
-		const tdMes = document.createElement("td");
-		const tdRec = document.createElement("td");
-		const tdSit = document.createElement("td");
-		sH(tdId,evento.id);
-		sH(tdMes,evento.mes);
-		sH(tdRec,evento.recibo);
-		sH(tdSit,evento.situacao);
-		tr.appendChild(tdId);
-		tr.appendChild(tdMes);
-		tr.appendChild(tdRec);
-		tr.appendChild(tdSit);
-		tBodyEventos.appendChild(tr);
-	} 
-		
+function homeHDL() {  
+	gI("enviar").disabled = "disabled";
+	getEmpresas();
+	getMeses();
 }
+	
 
 function retornoHDL() {
 	const retornos = [
@@ -115,11 +81,15 @@ function retornoHDL() {
 }
 
 
-function inicioHDL() { }
+function inicioHDL() {
+	gI("enviar").disabled = "disabled";
+	getEmpresas();
+	getMeses();
+ }
 
-function politica_de_privacidadeHDL() { }
+function politica_de_privacidadeHDL() { /* TODO document why this function 'politica_de_privacidadeHDL' is empty */ }
 
-function termos_de_usoHDL() { }
+function termos_de_usoHDL() { /* TODO document why this function 'termos_de_usoHDL' is empty */ }
 
 function reportHDL() {
 	addPageNumbers();

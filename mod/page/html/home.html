@@ -1,118 +1,90 @@
-<div class="dv-center">
-	
-	<div class="dv-line">
-
-		<div class="dv-column">
-			<h3 class="dv-margin-top-hdpi dv-bold extra-bold">Eventos</h3>
-		</div>
-
-	</div>
-
-</div>
-
-<div class="dv-margin-xdpi">
-	
-	<div class="dv-line">
-
-		<div class="dv-column dv-position-relative dv-vertical-align-center">
-	
-			<div class="dv-full-width dv-padding-top-mdpi dv-padding-bottom-mdpi">
-	
-				<form onsubmit="searchExample(); return false;">
-	
-					<input class="dv-padding-mdpi dv-white transparent-bg border-input italic" type="text" id="pesquisa"
-						name="pesquisa" autocomplete="off" placeholder="Busque por nome ou atividade">
-	
-				</form>
-	
+<div class="dv-line dv-full-height">
+	<div class="dv-column dv-white-bg dv-padding-hdpi">
+	  <header>
+		<h5 class="dv-margin-bottom-ldpi dv-bold dv-text-align-center">
+		  Eventos
+		</h5>
+		<hr />
+		<form onsubmit="getContribuicoes(); return false;">
+		  <div class="dv-line">
+			<div class="dv-column dv-margin-mdpi">
+			  <label for="mes">Mês</label>
+			  <select
+				name="mes"
+				id="mes"
+				class="dv-padding-ldpi dv-margin-bottom-mdpi dv-radius"
+				required
+				title="Mês"
+			  >
+			  <option value="">Selecione um Mês...</option>
+			  </select>
 			</div>
-	
-			<img onclick="searchExample();" class="dv-position-absolute dv-right dv-margin-right-hdpi dv-cursor"
-				src="@_ROOT/mod/page/img/icon/search.svg" width="24px;" />
-	
-		</div>
-	
+			<div class="dv-column dv-margin-mdpi">
+			  <label for="ano">Ano</label>
+			  <input
+				type="number"
+				name="ano"
+				id="ano"
+				class="dv-padding-ldpi dv-margin-bottom-mdpi dv-radius"
+				maxlength="4"
+				minlength="4"
+				min="2000"
+				required
+				title="Ano"
+			  />
+			</div>
+			<div class="dv-column dv-margin-mdpi">
+			  <label for="selEmpresas">Empresa</label>
+			  <select
+				name="selEmpresas"
+				id="selEmpresas"
+				class="dv-padding-ldpi dv-margin-bottom-mdpi dv-radius"
+				required
+				title="Empresa"
+			  >
+				<option value="">Selecione uma Empresa...</option>
+			  </select>
+			</div>
+		  </div>
+		  <div class="dv-line">
+			<div class="dv-column dv-horizontal-align-right">
+			  <div
+				class="dv-padding-right-mdpi dv-padding-bottom-mdpi dv-padding-left-mdpi"
+			  >
+				<button
+				  type="submit"
+				  class="dv-padding-ldpi dv-blue-bg dv-white dv-bold dv-radius dv-cursor"
+				>
+				  <span class="dv-svg-ldpi dv-white">
+					<file(img /icon/check.svg)>
+				  </span>
+				  Buscar Dados
+				</button>
+			  </div>
+			  <div
+				class="dv-padding-right-mdpi dv-padding-bottom-mdpi dv-padding-left-mdpi"
+			  >
+				<button
+				  type="button"
+				  name="enviar"
+				  id="enviar"
+				  class="dv-padding-ldpi dv-green-bg dv-white dv-bold dv-radius dv-cursor"
+				  onclick="enviarDados();"
+				>
+				  <span class="dv-svg-ldpi dv-white">
+					<file(img /icon/check.svg)>
+				  </span>
+				  Enviar Dados
+				</button>
+			  </div>
+			</div>
+		  </div>
+		</form>
+	  </header>
+  
+	  <main id="content"></main>
+  
+	  <footer></footer>
 	</div>
-	
-	<div class="dv-line">
-
-		<div class="dv-column dv-horizontal-align-right">
-			<a href="http://localhost/esocial/retorno">
-				<button class="button dv-margin-mdpi white-text">Evento</button>
-			</a>
-		</div>
-
-	</div>
-
-		
-			<main id="eventos">
-				<div class="dv-line">
-						<div class="dv-column">
-							<div class="dv-line dv-padding-hdpi">
-								<div class="dv-column">
-									div 1
-								</div>
-							</div>
-							<div class="dv-line dv-padding-hdpi">
-								<div class="dv-column">
-									conteúdo div 2
-								</div>
-							</div>
-							<div class="dv-line dv-padding-hdpi">
-								<div class="dv-column">
-									ação div 3
-								</div>
-							</div>
-						</div>
-					<div class="dv-column">
-						<div class="dv-line dv-padding-hdpi">
-							<div class="dv-column">
-								div 2
-							</div>
-						</div>
-						<div class="dv-line dv-padding-hdpi">
-							<div class="dv-column">
-								conteúdo div 2
-							</div>
-						</div>
-						<div class="dv-line dv-padding-hdpi">
-							<div class="dv-column">
-								ações div 2
-							</div>
-						</div>
-					</div>
-					<div class="dv-column">
-						<div class="dv-line dv-padding-hdpi">
-							<div class="dv-column">
-								div 3
-							</div>
-						</div>
-						<div class="dv-line dv-padding-hdpi">
-							<div class="dv-column">
-								conteúdo div 3	
-							</div>
-						</div>
-						<div class="dv-line dv-padding-hdpi">
-							<div class="dv-column">
-								ações div 3
-							</div>
-						</div>
-					</div>
-				</div>
-			</main>
-			
-		
-
-	
-
-	
-
-	<div class="dv-line dv-margin-top-hdpi dv-margin-bottom-hdpi">
-
-		<div class="dv-column dv-horizontal-align-left">
-			<a href="http://localhost/esocial/home" class="dv-margin-top-xdpi dv-margin-bottom-xdpi link dv-bold"><u>Voltar</u></a>
-		</div>
-		
-	</div>
-
-</div>
+  </div>
+  

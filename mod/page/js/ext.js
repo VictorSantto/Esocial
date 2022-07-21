@@ -86,8 +86,8 @@ function setContent(value) {
 	const empresa = getEmpresa(value.empresa);
 	return "<hr class=\"dv-margin-bottom\"/>" +
 		"<strong>" + empresa.empresa + " - " + empresa.nome +
-		" ID: " + value.id + 
-		" Mês/Ano " + value.anoMes + `${value.mesCompetencia < 10 ? '0' : ''}${value.mesCompetencia}/${value.anoCompetencia}` +
+		" ID: " + value.codOrgao + 
+		" Mês/Ano: " + `${value.mesCompetencia < 10 ? '0' : ''}${value.mesCompetencia}/${value.anoCompetencia}` +
 		"</strong>" +
 		"<div class=\"dv-line dv-padding-hdpi\">" +
 		"	<div class=\"dv-column\">" +		

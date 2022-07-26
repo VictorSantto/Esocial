@@ -13,6 +13,18 @@
 	 
 	require_once($_DOCUMENT_ROOT . "/lib/getz/Activator.php");
 
+	/*
+	$url = 'http://wf.codiub.net/integracaoEsocial';
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSER, true);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_ssetopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+	
+	*/
+
+
+
+
 	if ($method == "page") {
 		$authorization = new logic\Authorization();
 		if ($authorization->isValid()) {

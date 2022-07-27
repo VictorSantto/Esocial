@@ -13,42 +13,32 @@
 	 
 	require_once($_DOCUMENT_ROOT . "/lib/getz/Activator.php");
 
-	/*
-	$url = 'http://wf.codiub.net/integracaoEsocial';
-	$ch = curl_init($url);
-	curl_setopt($ch, CURLOPT_RETURNTRANSER, true);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-	curl_ssetopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
-	
-	*/
-
-
-
-
 	if ($method == "page") {
 		$authorization = new logic\Authorization();
 		if ($authorization->isValid()) {
 			header("Location: " . $view->getRoot() . "/inicio");
 		} else {
-			$daoFactory->beginTransaction();
-			$response["usuarios"] = $daoFactory->getUsuariosDao()->read("", "usuarios.id ASC", true);
-			$daoFactory->close();
-			$response["users"] = [
-				["user" => 'ash', 'jobs' => [["job" => "job 1"], ["job" => "job 2"]]],
-				["user" => 'brock', 'jobs' => [["job" => "job 3"], ["job" => "job 4"]]],
-				["user" => 'misty', 'jobs' => [["job" => "job 5"], ["job" => "job 6"]]]
-			];
-			$response["values"] = [
-				"a" => 1,
-				"b" => 2,
-				"c" => 3
-			];
-			$response["values2"] = [
-				10,
-				20,
-				30
-			];
-			$response["print"] = "true";
+			// $daoFactory->beginTransaction();
+			// $response["usuarios"] = $daoFactory->getUsuariosDao()->read("", "usuarios.id ASC", true);
+			// $daoFactory->close();
+			// $response["users"] = [
+			// 	["user" => 'ash', 'jobs' => [["job" => "job 1"], ["job" => "job 2"]]],
+			// 	["user" => 'brock', 'jobs' => [["job" => "job 3"], ["job" => "job 4"]]],
+			// 	["user" => 'misty', 'jobs' => [["job" => "job 5"], ["job" => "job 6"]]]
+			// ];
+			// $response["values"] = [
+			// 	"a" => 1,
+			// 	"b" => 2,
+			// 	"c" => 3
+			// ];
+			// $response["values2"] = [
+			// 	10,
+			// 	20,
+			// 	30
+			// ];
+			// $response["print"] = "true";
+			$response["data"] = callAPI("/movimentacoes/retornos/267", [], "GET", array("tenantId: cohagra"));
+
 			echo $view->parse($_DOCUMENT_ROOT . $_PACKAGE . "/html/header.html");
 			echo $view->parse($_DOCUMENT_ROOT . $_PACKAGE . "/html/home.html");
 			echo $view->parse($_DOCUMENT_ROOT . $_PACKAGE . "/html/footer.html");

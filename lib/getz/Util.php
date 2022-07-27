@@ -7,6 +7,73 @@
 	 * @see https://wtag.com.br/getz
 	 */
 
+	define('URL_API', 'http://wf.codiub.net/integracaoEsocial');
+	define('HTTP_STATUS', array(
+		100 => ['CONTINUE', 'CONTINUE'],
+		101 => ['SWITCHING_PROTOCOL', 'SWITCHING PROTOCOL'],
+		102 => ['PROCESSING', 'PROCESSING'],
+		103 => ['EARLY_HINTS', 'EARLY HINTS'],
+		200 => ['OK', 'OK'],
+		201 => ['CREATED', 'CREATED'],
+		202 => ['ACCEPTED', 'ACCEPTED'],
+		203 => ['NON_AUTHORITATIVE_INFORMATION', 'NON AUTHORITATIVE INFORMATION'],
+		204 => ['NO_CONTENT', 'NO CONTENT'],
+		205 => ['RESET_CONTENT', 'RESET CONTENT'],
+		206 => ['PARTIAL_CONTENT', 'PARTIAL CONTENT'],
+		207 => ['MULTI_STATUS_207', 'MULTI STATUS 207'],
+		208 => ['MULTI_STATUS_208', 'MULTI_STATUS 208'],
+		226 => ['IM_USED', 'IM USED'],
+		300 => ['MULTIPLE_CHOICE', 'MULTIPLE CHOICE'],
+		301 => ['MOVED_PERMANENTLY', 'MOVED PERMANENTLY'],
+		302 => ['FOUND', 'FOUND'],
+		303 => ['SEE_OTHER', 'SEE OTHER'],
+		304 => ['NOT_MODIFIED', 'NOT MODIFIED'],
+		305 => ['USE_PROXY', 'USE PROXY'],
+		306 => ['UNUSED', 'UNUSED'],
+		307 => ['TEMPORARY_REDIRECT', 'TEMPORARY REDIRECT'],
+		308 => ['PERMANENT_REDIRECT', 'PERMANENT REDIRECT'],
+		400 => ['BAD_REQUEST', 'BAD REQUEST'],
+		401 => ['UNAUTHORIZED', 'UNAUTHORIZED'],
+		402 => ['PAYMENT_REQUIRED', 'PAYMENT REQUIRED'],
+		403 => ['FORBIDDEN', 'FORBIDDEN'],
+		404 => ['NOT_FOUND', 'NOT FOUND'],
+		405 => ['METHOD_NOT_ALLOWED', 'METHOD NOT ALLOWED'],
+		406 => ['NOT_ACCEPTABLE', 'NOT ACCEPTABLE'],
+		407 => ['PROXY_AUTHENTICATION_REQUIRED', 'PROXY AUTHENTICATION REQUIRED'],
+		408 => ['REQUEST_TIMEOUT', 'REQUEST TIMEOUT'],
+		409 => ['CONFLICT', 'CONFLICT'],
+		410 => ['GONE', 'GONE'],
+		411 => ['LENGTH_REQUIRED', 'LENGTH REQUIRED'],
+		412 => ['PRECONDITION_FAILED', 'PRECONDITION FAILED'],
+		413 => ['PAYLOAD_TOO_LARGE', 'PAYLOAD TOO LARGE'],
+		414 => ['URI_TOO_LONG', 'URI TOO LONG'],
+		415 => ['UNSUPPORTED_MEDIA_TYPE', 'UNSUPPORTED MEDIA TYPE'],
+		416 => ['REQUESTED_RANGE_NOT_SATISFIABLE', 'REQUESTED RANGE NOT SATISFIABLE'],
+		417 => ['EXPECTATION_FAILED', 'EXPECTATION FAILED'],
+		418 => ['I_AM_A_TEAPOT', 'I AM A TEAPOT'],
+		421 => ['MISDIRECTED_REQUEST', 'MISDIRECTED REQUEST'],
+		422 => ['UNPROCESSABLE_ENTITY', 'UNPROCESSABLE ENTITY'],
+		423 => ['LOCKED', 'LOCKED'],
+		424 => ['FAILED_DEPENDENCY', 'FAILED DEPENDENCY'],
+		425 => ['TOO_EARLY', 'TOO EARLY'],
+		426 => ['UPGRADE_REQUIRED', 'UPGRADE REQUIRED'],
+		428 => ['PRECONDITION_REQUIRED', 'PRECONDITION REQUIRED'],
+		429 => ['TOO_MANY_REQUESTS', 'TOO MANY REQUESTS'],
+		431 => ['REQUEST_HEADER_FIELDS_TOO_LARGE', 'REQUEST HEADER FIELDS TOO LARGE'],
+		451 => ['UNAVAILABLE_FOR_LEGAL_REASONS', 'UNAVAILABLE FOR LEGAL REASONS'],
+		500 => ['INTERNAL_SERVER_ERROR', 'INTERNAL SERVER ERROR'],
+		501 => ['NOT_IMPLEMENTED', 'NOT IMPLEMENTED'],
+		502 => ['BAD_GATEWAY', 'BAD GATEWAY'],
+		503 => ['SERVICE_UNAVAILABLE', 'SERVICE UNAVAILABLE'],
+		504 => ['GATEWAY_TIMEOUT', 'GATEWAY TIMEOUT'],
+		505 => ['HTTP_VERSION_NOT_SUPPORTED', 'HTTP VERSION NOT SUPPORTED'],
+		506 => ['VARIANT_ALSO_NEGOTIATES', 'VARIANT ALSO NEGOTIATES'],
+		507 => ['INSUFFICIENT_STORAGE', 'INSUFFICIENT STORAGE'],
+		508 => ['LOOP_DETECTED', 'LOOP DETECTED'],
+		510 => ['NOT_EXTENDED', 'NOT EXTENDED'],
+		511 => ['NETWORK_AUTHENTICATION_REQUIRED', 'NETWORK AUTHENTICATION REQUIRED']
+	));
+
 	/**
 	 * Enable CORS for external calls.
 	 */
@@ -481,5 +548,53 @@
 	function isLeapYear($year) {
 		return date("L", mktime(0, 0, 0, 1, 1, $year));
 	}
+
 	
+	function callAPI($uri, $data, $method = "GET", $headers = array(), $params = array())
+	{
+		try {
+			$headers += array("Accept: application/json", "Content-Type: application/json");
+			$curl = curl_init(URL_API . $uri . setParams($params));
+			curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($curl, CURLOPT_CUSTOMREQUEST, strtoupper($method));
+			curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
+			curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+			
+			$response = curl_exec($curl);
+
+			curl_close($curl);
+
+			$code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+			if ($code >= 300) {
+				throw new Exception("Erro " . $code . " - " . getErrorMsg($code));
+			}
+
+			return $response;
+		} catch (Exception $e) {
+			return $e->getMessage();
+		}
+	}
+
+	function setParams($params = array())
+	{
+		$ret = "";
+		$first = true;
+
+		if (!empty($params) > 0) {
+			foreach ($params as $key => $param) {
+				$ret .= ($first ? "?" : "&") . $key . "=" . $param;
+				$first = false;
+			}
+		}
+
+		return $ret;
+	}
+
+	function getErrorMsg($code)
+	{
+		return HTTP_STATUS[$code];
+	}
+
 ?>
